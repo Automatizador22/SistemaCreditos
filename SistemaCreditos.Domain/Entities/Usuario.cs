@@ -22,7 +22,7 @@ namespace SistemaCreditos.Domain.Entities
         public String? SegundoApellido { get; set; }
         public bool Estado { get; private set; } = true;
         public int IdRol { get; set; }
-        public DateTime FechaRegistro { get; set; } = DateTime.Now;
+        public DateTime FechaRegistro { get; set; } = DateTime.UtcNow;
         public DateTime? FechaActualizacion { get; private set; }
         public DateTime? FechaDesvinculacion { get; private set; }
 
@@ -38,18 +38,18 @@ namespace SistemaCreditos.Domain.Entities
         public void DesactivarCuenta()
         {
             Estado = false;
-            FechaActualizacion = DateTime.Now;
+            FechaActualizacion = DateTime.UtcNow;
         }
         public void ActivarCuenta()
         {
             Estado = true;
-            FechaActualizacion = DateTime.Now;
+            FechaActualizacion = DateTime.UtcNow;
         }
         public void Desvincular()
         {
             Estado = false;
-            FechaDesvinculacion = DateTime.Now;
-            FechaActualizacion = DateTime.Now;
+            FechaDesvinculacion = DateTime.UtcNow;
+            FechaActualizacion = DateTime.UtcNow;
         }
     }
 }

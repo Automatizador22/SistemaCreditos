@@ -14,8 +14,6 @@ namespace SistemaCreditos.Domain.Entities
 
 
         public Usuario Usuario { get; set; } = null!;
-        //Mejorar para que no use el ICollection
-        //public ICollection<Inscripcion> Inscripciones { get; set; } = new List<Inscripcion>();
 
         public IReadOnlyCollection<Inscripcion> Inscripciones => _inscripciones.AsReadOnly();
 
@@ -24,11 +22,9 @@ namespace SistemaCreditos.Domain.Entities
             if (materia == null)
                 throw new ArgumentNullException(nameof(materia));
 
-            // Validar si el usuario asociado está desvinculado
             if (Usuario != null && Usuario.FechaDesvinculacion.HasValue)
                 throw new InvalidOperationException("Un estudiante desvinculado no puede inscribir materias.");
 
-            // Validar duplicado por IdMateria (incluso si IdInscripcion aún es 0)
             if (_inscripciones.Any(i => i.IdMateria == materia.IdMateria))
                 throw new InvalidOperationException("El estudiante ya está inscrito en esta materia.");
 
@@ -36,7 +32,7 @@ namespace SistemaCreditos.Domain.Entities
             {
                 IdEstudiante = this.IdEstudiante,
                 IdMateria = materia.IdMateria,
-                FechaInscripcion = DateTime.Now
+                FechaInscripcion = DateTime.UtcNow
             });
         }
     }

@@ -13,11 +13,6 @@ namespace SistemaCreditos.Domain.Entities
         public int IdProfesor { get; set; }
         public int IdUsuario { get; set; }
         public EstadoRegistroProfesor EstadoRegistro { get; set; } = EstadoRegistroProfesor.PENDIENTE;
-
-
-        //Mejorar para que no use el ICollection
-        //public ICollection<Materia> Materias { get; set; } = new List<Materia>();
-
         public Usuario Usuario { get; set; } = null!;
 
         public IReadOnlyCollection<Materia> Materias => _materias.AsReadOnly();

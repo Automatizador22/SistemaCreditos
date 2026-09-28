@@ -5,8 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SistemaCreditos.Domain.Enums;
-
-//Estados solicitud registro profesor
 public enum  EstadoRegistroProfesor
 {
     PENDIENTE = 1,

@@ -14,13 +14,10 @@ namespace SistemaCreditos.Domain.Entities
         public String NombreMateria { get; set; } = String.Empty;
         public int Creditos { get; set; } = 3;
         public int? IdProfesor { get; set; }
-        public DateTime FechaRegistro { get; set; } = DateTime.Now;
+        public DateTime FechaRegistro { get; set; } = DateTime.UtcNow;
         public DateTime? FechaActualizacion { get; set; }
 
         public Profesor? Profesor { get; set; }
-        //Mejorar para que no use el ICollection
-        //public ICollection<Inscripcion> Inscripciones { get; set; } = new List<Inscripcion>();
-
         public IReadOnlyCollection<Inscripcion> Inscripciones => _inscripciones.AsReadOnly();
 
     }
