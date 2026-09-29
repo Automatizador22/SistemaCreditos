@@ -1,1 +1,44 @@
+.# Visual Studio / Directorios de compilación
+[Oo]bj/
+[Bb]in/
+/[Bb]uild/
+/[Bb]inaries/
+/[Oo]utput/
 .vs/
+
+# Caché y archivos de usuario de Visual Studio
+*.user
+*.suo
+*.userprefs
+*.cache
+*.ncb
+*.aps
+*.opendb
+*.dbmdl
+*.publish.xml
+
+# Resultados de pruebas y cobertura de código
+[Tt]est[Rr]esult*/
+*.trx
+*.coverage
+*.coveragexml
+
+# Archivos de depuración y logs
+*.log
+*.pid
+*.suo.lock
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# Herramientas de análisis de código (ReSharper, SonarQube, etc.)
+_ReSharper*/
+*.resharper
+*[Rr]esharper*
+.sonarqube/
+
+# Archivos de Docker / Configuración local sensible
+docker-compose.override.yml
+.env

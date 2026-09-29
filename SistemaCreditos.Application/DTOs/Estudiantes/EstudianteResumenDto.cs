@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SistemaCreditos.Application.DTOs.Materias;
+﻿using SistemaCreditos.Application.DTOs.Materias;
 
 namespace SistemaCreditos.Application.DTOs.Estudiantes
 {
