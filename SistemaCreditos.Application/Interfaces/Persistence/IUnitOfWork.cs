@@ -7,7 +7,6 @@ namespace SistemaCreditos.Application.Interfaces.Persistence
         IProfesorRepository Profesores { get; }
         IEstudianteRepository Estudiantes { get; }
         IMateriaRepository Materias { get; }
-        IGenericRepository<T> Repository<T>() where T : class;
         Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
     }
 }

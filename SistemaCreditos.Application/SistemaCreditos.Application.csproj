@@ -16,11 +16,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="UseCases\" />
+    <ProjectReference Include="..\SistemaCreditos.Domain\SistemaCreditos.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SistemaCreditos.Domain\SistemaCreditos.Domain.csproj" />
+    <Folder Include="UseCases\Materias\" />
+    <Folder Include="UseCases\Profesores\" />
   </ItemGroup>
 
 </Project>
