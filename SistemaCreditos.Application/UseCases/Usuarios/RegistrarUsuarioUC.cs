@@ -6,13 +6,13 @@ using SistemaCreditos.Domain.Entities;
 
 namespace SistemaCreditos.Application.UseCases.Usuarios
 {
-    public class RegistrarUsuarioUseCase
+    public class RegistrarUsuarioUC
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IPasswordHasher _passwordHasher;
 
         // 1. Inyección de Dependencias: Pedimos los enchufes que necesitamos
-        public RegistrarUsuarioUseCase(IUnitOfWork unitOfWork, IPasswordHasher passwordHasher)
+        public RegistrarUsuarioUC(IUnitOfWork unitOfWork, IPasswordHasher passwordHasher)
         {
             _unitOfWork = unitOfWork;
             _passwordHasher = passwordHasher;

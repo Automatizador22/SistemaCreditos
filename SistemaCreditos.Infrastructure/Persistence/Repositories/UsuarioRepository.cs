@@ -13,7 +13,9 @@ namespace SistemaCreditos.Infrastructure.Persistence.Repositories
 
         public async Task<Usuario?> GetByUsernameOrEmailAsync(string identifier)
         {
-            return await _dbSet.FirstOrDefaultAsync(u => u.UserName == identifier || u.Email == identifier);
+            return await _dbSet
+                    .Include(u => u.Rol)
+                    .FirstOrDefaultAsync(u => u.UserName == identifier || u.Email == identifier);
         }
 
         public async Task<Usuario?> GetByDocumentoAsync(string numeroDocumento)

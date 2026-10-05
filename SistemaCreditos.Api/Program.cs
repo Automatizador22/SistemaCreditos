@@ -1,15 +1,37 @@
+using Microsoft.EntityFrameworkCore;
+using SistemaCreditos.Application.Interfaces.Persistence;
+using SistemaCreditos.Application.Interfaces.Security;
+using SistemaCreditos.Application.UseCases.Usuarios;
+using SistemaCreditos.Infrastructure.Persistence.Context;
+using SistemaCreditos.Infrastructure.Persistence.Repositories;
+using SistemaCreditos.Infrastructure.Security;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
+// Configurar Controllers y Swagger
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// Configurar la Base de Datos (MySQL)
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<AppDbContext>(options =>
+{
+    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
+});
+
+// Conectar Interfaces con Implementaciones
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddScoped<IPasswordHasher, PasswordHasher>();
+builder.Services.AddScoped<IJwtTokenGenerator, JwtTokenGenerator>();
+
+// Casos de Uso
+builder.Services.AddScoped<RegistrarUsuarioUC>();
+builder.Services.AddScoped<LoginUC>();
+
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Configurar el entorno HTTP
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -17,9 +39,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
-
 app.MapControllers();
 
 app.Run();

@@ -17,4 +17,9 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SistemaCreditos.Application\SistemaCreditos.Application.csproj" />
+    <ProjectReference Include="..\SistemaCreditos.Infrastructure\SistemaCreditos.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
