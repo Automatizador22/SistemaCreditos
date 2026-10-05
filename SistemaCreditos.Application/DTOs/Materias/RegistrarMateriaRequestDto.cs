@@ -1,7 +1,7 @@
 ﻿
 namespace SistemaCreditos.Application.DTOs.Materias
 {
-    public class CrearMateriaRequestDto
+    public class RegistrarMateriaRequestDto
     {
         public string NombreMateria { get; set; } = string.Empty;
         public int Creditos { get; set; } = 3;

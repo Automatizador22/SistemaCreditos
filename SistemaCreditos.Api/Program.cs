@@ -4,6 +4,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using SistemaCreditos.Application.Interfaces.Persistence;
 using SistemaCreditos.Application.Interfaces.Security;
+using SistemaCreditos.Application.UseCases.Estudiantes;
 using SistemaCreditos.Application.UseCases.Usuarios;
 using SistemaCreditos.Infrastructure.Persistence.Context;
 using SistemaCreditos.Infrastructure.Persistence.Repositories;
@@ -58,6 +59,7 @@ builder.Services.AddScoped<IJwtTokenGenerator, JwtTokenGenerator>();
 // Casos de Uso
 builder.Services.AddScoped<RegistrarUsuarioUC>();
 builder.Services.AddScoped<LoginUC>();
+builder.Services.AddScoped<InscribirMateriasUC>();
 
 var secretKey = builder.Configuration["JwtSettings:SecretKey"];
 
