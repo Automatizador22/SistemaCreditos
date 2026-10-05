@@ -17,6 +17,16 @@
   },
   {
     "ContainingType": "SistemaCreditos.API.Controllers.AuthController",
+    "Method": "PerfilSeguro",
+    "RelativePath": "api/auth/perfil-seguro",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaCreditos.API.Controllers.AuthController",
     "Method": "Registrar",
     "RelativePath": "api/auth/registro",
     "HttpMethod": "POST",

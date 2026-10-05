@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "/rIfaZ6gxos=",
+  "dgSpecHash": "/xToGgocL5E=",
   "success": true,
   "projectFilePath": "E:\\SEBAS\\PruebaTecnicaInter\\SistemaCreditos\\SistemaCreditos.Api\\SistemaCreditos.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\PC-SEBAS\\.nuget\\packages\\bcrypt.net-next\\4.2.0\\bcrypt.net-next.4.2.0.nupkg.sha512",
     "C:\\Users\\PC-SEBAS\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\PC-SEBAS\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.31\\microsoft.aspnetcore.authentication.jwtbearer.8.0.31.nupkg.sha512",
     "C:\\Users\\PC-SEBAS\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
     "C:\\Users\\PC-SEBAS\\.nuget\\packages\\microsoft.bcl.cryptography\\10.0.2\\microsoft.bcl.cryptography.10.0.2.nupkg.sha512",
     "C:\\Users\\PC-SEBAS\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\3.3.3\\microsoft.codeanalysis.analyzers.3.3.3.nupkg.sha512",
@@ -33,6 +34,8 @@
     "C:\\Users\\PC-SEBAS\\.nuget\\packages\\microsoft.identitymodel.abstractions\\8.23.0\\microsoft.identitymodel.abstractions.8.23.0.nupkg.sha512",
     "C:\\Users\\PC-SEBAS\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\8.23.0\\microsoft.identitymodel.jsonwebtokens.8.23.0.nupkg.sha512",
     "C:\\Users\\PC-SEBAS\\.nuget\\packages\\microsoft.identitymodel.logging\\8.23.0\\microsoft.identitymodel.logging.8.23.0.nupkg.sha512",
+    "C:\\Users\\PC-SEBAS\\.nuget\\packages\\microsoft.identitymodel.protocols\\7.7.3\\microsoft.identitymodel.protocols.7.7.3.nupkg.sha512",
+    "C:\\Users\\PC-SEBAS\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\7.7.3\\microsoft.identitymodel.protocols.openidconnect.7.7.3.nupkg.sha512",
     "C:\\Users\\PC-SEBAS\\.nuget\\packages\\microsoft.identitymodel.tokens\\8.23.0\\microsoft.identitymodel.tokens.8.23.0.nupkg.sha512",
     "C:\\Users\\PC-SEBAS\\.nuget\\packages\\microsoft.openapi\\1.6.14\\microsoft.openapi.1.6.14.nupkg.sha512",
     "C:\\Users\\PC-SEBAS\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.22.1\\microsoft.visualstudio.azure.containers.tools.targets.1.22.1.nupkg.sha512",

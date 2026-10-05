@@ -127,3 +127,6 @@ E:\SEBAS\PruebaTecnicaInter\SistemaCreditos\SistemaCreditos.Api\bin\Debug\net8.0
 E:\SEBAS\PruebaTecnicaInter\SistemaCreditos\SistemaCreditos.Api\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 E:\SEBAS\PruebaTecnicaInter\SistemaCreditos\SistemaCreditos.Api\bin\Debug\net8.0\System.Formats.Asn1.dll
 E:\SEBAS\PruebaTecnicaInter\SistemaCreditos\SistemaCreditos.Api\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+E:\SEBAS\PruebaTecnicaInter\SistemaCreditos\SistemaCreditos.Api\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+E:\SEBAS\PruebaTecnicaInter\SistemaCreditos\SistemaCreditos.Api\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+E:\SEBAS\PruebaTecnicaInter\SistemaCreditos\SistemaCreditos.Api\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
