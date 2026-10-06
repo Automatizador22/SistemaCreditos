@@ -18,12 +18,15 @@ namespace SistemaCreditos.Application.UseCases.Estudiantes
             {
                 throw new NotFoundException($"El estudiante con ID {dto.IdUsuarioEstudiante} no existe.");
             }
+
+            int idEstudianteReal = estudiante.IdEstudiante;
+
             var materia = await _unitOfWork.Materias.GetByIdAsync(dto.IdMateria);
             if (materia == null)
             {
                 throw new NotFoundException($"La materia con ID {dto.IdMateria} no existe.");
             }
-            var materiasDelEstudiante = await _unitOfWork.Materias.GetMateriasPorEstudianteAsync(dto.IdUsuarioEstudiante);
+            var materiasDelEstudiante = await _unitOfWork.Materias.GetMateriasPorEstudianteAsync(idEstudianteReal);
 
             if (materiasDelEstudiante.Count >= 3)
             {

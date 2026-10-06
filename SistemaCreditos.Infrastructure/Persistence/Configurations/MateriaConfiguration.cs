@@ -14,7 +14,7 @@ namespace SistemaCreditos.Infrastructure.Persistence.Configurations
             builder.HasKey(m => m.IdMateria);
             builder.Property(m => m.IdMateria).HasColumnName("id_materia");
 
-            builder.Property(m => m.CodMateria).HasColumnName("cod_materia");
+            builder.Property(m => m.CodMateria).HasColumnName("cod_materia").HasConversion<string>();
             builder.HasIndex(m => m.CodMateria).IsUnique();
 
             builder.Property(m => m.NombreMateria).HasColumnName("nombre_materia");
