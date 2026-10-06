@@ -17,19 +17,30 @@ namespace SistemaCreditos.Application.UseCases.Estudiantes
             if (estudiante == null)
             {
                 throw new NotFoundException($"El estudiante con ID {dto.IdUsuarioEstudiante} no existe.");
-            }         
+            }
             var materia = await _unitOfWork.Materias.GetByIdAsync(dto.IdMateria);
             if (materia == null)
             {
                 throw new NotFoundException($"La materia con ID {dto.IdMateria} no existe.");
             }
+            var materiasDelEstudiante = await _unitOfWork.Materias.GetMateriasPorEstudianteAsync(dto.IdUsuarioEstudiante);
 
-            var creditosActuales = await _unitOfWork.Materias.GetTotalCreditosInscritosAsync(estudiante.IdEstudiante);
-            if (creditosActuales + materia.Creditos > 3)
+            if (materiasDelEstudiante.Count >= 3)
             {
-                throw new ValidationException($"El estudiante con ID {dto.IdUsuarioEstudiante} no puede inscribirse a la materia {materia.NombreMateria} porque excedería el límite de créditos.");
+                throw new ValidationException("Has alcanzado el límite máximo. Solo puedes seleccionar 3 materias.");
             }
-
+            if (materiasDelEstudiante.Any(m => m.IdMateria == dto.IdMateria))
+            {
+                throw new ValidationException("Ya te encuentras inscrito en esta materia.");
+            }
+            if (materia.IdProfesor.HasValue)
+            {
+                var tieneMismoProfesor = materiasDelEstudiante.Any(m => m.IdProfesor == materia.IdProfesor.Value);
+                if (tieneMismoProfesor)
+                {
+                    throw new ValidationException("No puedes inscribir esta materia. Ya tienes otra clase asignada con este mismo profesor.");
+                }
+            }
             estudiante.AgregarInscripcion(materia);
             await _unitOfWork.SaveChangesAsync();
 

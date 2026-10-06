@@ -6,6 +6,7 @@ using SistemaCreditos.Application.Interfaces.Persistence;
 using SistemaCreditos.Application.Interfaces.Security;
 using SistemaCreditos.Application.UseCases.Estudiantes;
 using SistemaCreditos.Application.UseCases.Usuarios;
+using SistemaCreditos.Application.UseCases.Materias;
 using SistemaCreditos.Infrastructure.Persistence.Context;
 using SistemaCreditos.Infrastructure.Persistence.Repositories;
 using SistemaCreditos.Infrastructure.Security;
@@ -60,6 +61,7 @@ builder.Services.AddScoped<IJwtTokenGenerator, JwtTokenGenerator>();
 builder.Services.AddScoped<RegistrarUsuarioUC>();
 builder.Services.AddScoped<LoginUC>();
 builder.Services.AddScoped<InscribirMateriasUC>();
+builder.Services.AddScoped<RegistrarMateriaUC>();
 
 var secretKey = builder.Configuration["JwtSettings:SecretKey"];
 
