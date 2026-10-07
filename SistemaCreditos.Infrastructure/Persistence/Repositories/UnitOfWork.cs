@@ -10,6 +10,7 @@ namespace SistemaCreditos.Infrastructure.Persistence.Repositories
         public IProfesorRepository Profesores { get; private set; }
         public IEstudianteRepository Estudiantes { get; private set; }
         public IMateriaRepository Materias { get; private set; }
+        public IInscripcionRepository Inscripciones { get; private set; }
 
         public UnitOfWork(AppDbContext context)
         {
@@ -18,6 +19,7 @@ namespace SistemaCreditos.Infrastructure.Persistence.Repositories
             Profesores = new ProfesorRepository(_context);
             Estudiantes = new EstudianteRepository(_context);
             Materias = new MateriaRepository(_context);
+            Inscripciones = new InscripcionRepository(_context);
         }
 
         //Enviar cambios a la base de datos

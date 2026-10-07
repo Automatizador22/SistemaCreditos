@@ -7,6 +7,7 @@ namespace SistemaCreditos.Application.Interfaces.Persistence
         IProfesorRepository Profesores { get; }
         IEstudianteRepository Estudiantes { get; }
         IMateriaRepository Materias { get; }
+        IInscripcionRepository Inscripciones { get; }
         Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
     }
 }
