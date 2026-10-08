@@ -23,4 +23,8 @@
     <ProjectReference Include="..\SistemaCreditos.Infrastructure\SistemaCreditos.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Middlerware\" />
+  </ItemGroup>
+
 </Project>

@@ -26,6 +26,8 @@ namespace SistemaCreditos.Infrastructure.Persistence.Repositories
         {
             return await _dbSet
                 .Include(m => m.Inscripciones)
+                .Include(m => m.Profesor)
+                .ThenInclude(p => p.Usuario)
                 .Where(m => m.Inscripciones.Any(i => i.IdEstudiante == idEstudiante))
                 .ToListAsync();
         }
