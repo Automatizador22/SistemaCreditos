@@ -63,6 +63,7 @@ builder.Services.AddScoped<LoginUC>();
 builder.Services.AddScoped<InscribirMateriasUC>();
 builder.Services.AddScoped<RegistrarMateriaUC>();
 builder.Services.AddScoped<VerCompañerosClaseUC>();
+builder.Services.AddScoped<ObtenerMateriasDisponiblesUC>();
 
 var secretKey = builder.Configuration["JwtSettings:SecretKey"];
 

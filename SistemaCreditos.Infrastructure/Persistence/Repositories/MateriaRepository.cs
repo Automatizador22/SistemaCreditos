@@ -12,7 +12,11 @@ namespace SistemaCreditos.Infrastructure.Persistence.Repositories
         }
         public async Task<IReadOnlyList<Materia>> GetMateriasDisponiblesAsync()
         {
-            return await _dbSet.ToListAsync();
+            return await _dbSet
+                .Include(m => m.Profesor)
+                .ThenInclude(p => p.Usuario)
+                .Include(m => m.Inscripciones)
+                .ToListAsync();
         }
         public async Task<IReadOnlyList<Materia>> GetMateriasConProfesorAsync()
         {

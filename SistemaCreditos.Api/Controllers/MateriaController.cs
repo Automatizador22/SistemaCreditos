@@ -7,20 +7,31 @@ namespace SistemaCreditos.Api.Controllers
 {
     [ApiController]
     [Route("api/materia")]
-    [Authorize(Roles = "ADMIN")]
+    
     public class MateriaController : ControllerBase
     {
         private readonly RegistrarMateriaUC _registrarMateriaUC;
-        public MateriaController(RegistrarMateriaUC registrarMateriaUC)
+        private readonly ObtenerMateriasDisponiblesUC _obtenerMateriasDisponiblesUC;
+        public MateriaController(RegistrarMateriaUC registrarMateriaUC, ObtenerMateriasDisponiblesUC obtenerMateriasDisponiblesUC)
         {
             _registrarMateriaUC = registrarMateriaUC;
+            _obtenerMateriasDisponiblesUC = obtenerMateriasDisponiblesUC;
         }
 
-        [HttpPost("registrar-materia")]
+        [HttpPost("RegistrarMateria")]
+        [Authorize(Roles = "ADMIN")]
         public async Task<IActionResult> RegistrarMateria([FromBody] RegistrarMateriaRequestDto dto)
         {
             var resultado = await _registrarMateriaUC.EjecutarAsync(dto);
             return Ok(resultado);
+        }
+
+        [HttpGet("ObtenerMateriasDisponibles")]
+        [Authorize]
+        public async Task<IActionResult> ObtenerMateriasDisponibles()
+        {
+            var resultado = await _obtenerMateriasDisponiblesUC.EjecutarAsync();
+            return Ok(resultado); 
         }
     }
 }

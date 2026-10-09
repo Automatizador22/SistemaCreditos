@@ -23,12 +23,9 @@ namespace SistemaCreditos.Application.UseCases.Estudiantes
             {
                 var inscripcionesMateria = await _unitOfWork.Inscripciones.GetInscripcionesPorMateriaAsync(materia.IdMateria);
 
-                string nombreProfesorReal = "Sin profesor asignado";
-
-                if (materia.Profesor != null && materia.Profesor.Usuario != null)
-                {
-                    nombreProfesorReal = materia.Profesor.Usuario.ObtenerNombreCompleto();
-                }
+                string nombreProfesorReal = materia.Profesor != null && materia.Profesor.Usuario != null
+                    ? materia.Profesor.Usuario.ObtenerNombreCompleto()
+                    : "Sin profesor asignado";
 
                 var dto = new MateriaCompañerosDto
                 {
