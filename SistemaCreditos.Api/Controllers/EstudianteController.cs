@@ -23,7 +23,13 @@ namespace SistemaCreditos.Api.Controllers
         [HttpPost("inscribir-materia")]
         public async Task<IActionResult> InscribirMateria([FromBody] InscribirMateriaRequestDto dto)
         {
-            var resultado = await _inscribirMateriasUC.EjecutarAsync(dto);
+            var idClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            if (string.IsNullOrEmpty(idClaim) || !int.TryParse(idClaim, out int idUsuario))
+            {
+                return Unauthorized(new { error = "Token inválido o corrupto." });
+            }
+            var resultado = await _inscribirMateriasUC.EjecutarAsync(idUsuario, dto);
             return Ok(resultado);
         }
 

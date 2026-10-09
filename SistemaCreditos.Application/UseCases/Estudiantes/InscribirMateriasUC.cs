@@ -11,12 +11,12 @@ namespace SistemaCreditos.Application.UseCases.Estudiantes
         {
             _unitOfWork = unitOfWork;
         }
-        public async Task <InscribirMateriaResponseDto> EjecutarAsync(InscribirMateriaRequestDto dto)
+        public async Task <InscribirMateriaResponseDto> EjecutarAsync(int idUsuario, InscribirMateriaRequestDto dto)
         {
-            var estudiante = await _unitOfWork.Estudiantes.GetByIdUsuarioAsync(dto.IdUsuarioEstudiante);
+            var estudiante = await _unitOfWork.Estudiantes.GetByIdUsuarioAsync(idUsuario);
             if (estudiante == null)
             {
-                throw new NotFoundException($"El estudiante con ID {dto.IdUsuarioEstudiante} no existe.");
+                throw new NotFoundException($"El estudiante con ID {idUsuario} no existe.");
             }
 
             int idEstudianteReal = estudiante.IdEstudiante;
