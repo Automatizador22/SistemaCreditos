@@ -15,11 +15,11 @@ namespace SistemaCreditos.Application.UseCases.Materias
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<List<RegistrarMateriaResponseDto>> EjecutarAsync()
+        public async Task<List<MateriaDetalleResponseDto>> EjecutarAsync()
         {
             var materias = await _unitOfWork.Materias.GetMateriasDisponiblesAsync();
 
-            var materiasDisponibles = materias.Select(m => new RegistrarMateriaResponseDto
+            var materiasDisponibles = materias.Select(m => new MateriaDetalleResponseDto
             {
                 IdMateria = m.IdMateria,
                 NombreMateria = m.NombreMateria,

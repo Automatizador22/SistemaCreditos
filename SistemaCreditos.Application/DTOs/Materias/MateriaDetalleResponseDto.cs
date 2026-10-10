@@ -1,7 +1,7 @@
 ﻿
 namespace SistemaCreditos.Application.DTOs.Materias
 {
-    public class RegistrarMateriaResponseDto
+    public class MateriaDetalleResponseDto
     {
         public int IdMateria { get; set; }
         public string CodMateria { get; set; } = string.Empty;

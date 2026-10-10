@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using SistemaCreditos.Application.DTOs.Estudiantes;
 using SistemaCreditos.Application.DTOs.Inscripciones;
 using SistemaCreditos.Application.UseCases.Estudiantes;
 using System.Security.Claims;
@@ -14,13 +13,21 @@ namespace SistemaCreditos.Api.Controllers
     {
         private readonly InscribirMateriasUC _inscribirMateriasUC;
         private readonly VerCompañerosClaseUC _verCompañerosClaseUC;
-        public EstudianteController(InscribirMateriasUC inscribirMateriasUC, VerCompañerosClaseUC verCompañerosClaseUC)
+        private readonly CancelarInscripcionUC _cancelarInscripcionUC;
+        private readonly VerPerfilEstudianteUC _verPerfilEstudianteUC;
+        public EstudianteController(
+            InscribirMateriasUC inscribirMateriasUC, 
+            VerCompañerosClaseUC verCompañerosClaseUC, 
+            CancelarInscripcionUC cancelarInscripcionUC,
+            VerPerfilEstudianteUC verPerfilEstudianteUC)
         {
             _inscribirMateriasUC = inscribirMateriasUC;
             _verCompañerosClaseUC = verCompañerosClaseUC;
+            _cancelarInscripcionUC = cancelarInscripcionUC;
+            _verPerfilEstudianteUC = verPerfilEstudianteUC;
         }
 
-        [HttpPost("inscribir-materia")]
+        [HttpPost("InscribirMateria")]
         public async Task<IActionResult> InscribirMateria([FromBody] InscribirMateriaRequestDto dto)
         {
             var idClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
@@ -33,7 +40,7 @@ namespace SistemaCreditos.Api.Controllers
             return Ok(resultado);
         }
 
-        [HttpGet("ver-companeros-clase")]
+        [HttpGet("VerCompañerosClase")]
         public async Task<IActionResult> VerCompañerosClase()
         {
             var idClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
@@ -46,5 +53,31 @@ namespace SistemaCreditos.Api.Controllers
             var resultado = await _verCompañerosClaseUC.EjecutarAsync(idUsuario);
             return Ok(resultado);
         }
+        [HttpDelete("CancelarMateria/{idMateria}")]
+        public async Task<IActionResult> CancelarMateria(int idMateria)
+        {
+            var idClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            if (string.IsNullOrEmpty(idClaim) || !int.TryParse(idClaim, out int idUsuario))
+            {
+                return Unauthorized(new { error = "Token inválido o corrupto." });
+            }
+            var resultado = await _cancelarInscripcionUC.EjecutarAsync(idUsuario, idMateria);
+            return Ok(new { mensaje = "Inscripción cancelada exitosamente." });
+        }
+        [HttpGet("ResumenEstudiante")]
+        public async Task<IActionResult> ResumenEstudiante()
+        {
+            var idClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            if (string.IsNullOrEmpty(idClaim) || !int.TryParse(idClaim, out int idUsuario))
+            {
+                return Unauthorized(new { error = "Token inválido o corrupto." });
+            }
+
+            var resultado = await _verPerfilEstudianteUC.EjecutarAsync(idUsuario);
+            return Ok(resultado);
+        }
+
     }
 }

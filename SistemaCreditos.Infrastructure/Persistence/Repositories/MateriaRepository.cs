@@ -35,11 +35,11 @@ namespace SistemaCreditos.Infrastructure.Persistence.Repositories
                 .Where(m => m.Inscripciones.Any(i => i.IdEstudiante == idEstudiante))
                 .ToListAsync();
         }
-        public async Task<int> GetTotalCreditosInscritosAsync(int idEstudiante)
-        {
-            return await _dbSet
-                .Where(m => m.Inscripciones.Any(i => i.IdEstudiante == idEstudiante))
-                .SumAsync(m => m.Creditos);
-        }
+        //public async Task<int> GetTotalCreditosInscritosAsync(int idEstudiante)
+        //{
+        //    return await _dbSet
+        //        .Where(m => m.Inscripciones.Any(i => i.IdEstudiante == idEstudiante))
+        //        .SumAsync(m => m.Creditos);
+        //}
     }
 }

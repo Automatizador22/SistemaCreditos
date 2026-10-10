@@ -14,7 +14,7 @@ namespace SistemaCreditos.Application.UseCases.Materias
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<RegistrarMateriaResponseDto> EjecutarAsync(RegistrarMateriaRequestDto dto)
+        public async Task<MateriaDetalleResponseDto> EjecutarAsync(RegistrarMateriaRequestDto dto)
         {
             string? nombreProfesor = null;
 
@@ -46,7 +46,7 @@ namespace SistemaCreditos.Application.UseCases.Materias
             await _unitOfWork.Materias.AddAsync(nuevaMateria);
             await _unitOfWork.SaveChangesAsync();
 
-            return new RegistrarMateriaResponseDto
+            return new MateriaDetalleResponseDto
             {
                 IdMateria = nuevaMateria.IdMateria,
                 CodMateria = nuevaMateria.CodMateria.ToString(),

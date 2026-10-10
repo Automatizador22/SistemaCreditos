@@ -8,6 +8,8 @@ namespace SistemaCreditos.Application.Interfaces.Persistence
         Task<IReadOnlyList<Materia>> GetMateriasConProfesorAsync();
         Task<IReadOnlyList<Materia>> GetMateriasPorProfesorAsync(int idProfesor);
         Task<IReadOnlyList<Materia>> GetMateriasPorEstudianteAsync(int idEstudiante);
-        Task<int> GetTotalCreditosInscritosAsync(int idEstudiante);
+
+        //Task<int> GetTotalCreditosInscritosAsync(int idEstudiante);
+
     }
 }
