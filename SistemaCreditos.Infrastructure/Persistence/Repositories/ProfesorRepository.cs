@@ -18,7 +18,9 @@ namespace SistemaCreditos.Infrastructure.Persistence.Repositories
         }
         public async Task<IReadOnlyList<Profesor>> GetSolicitudesPendientesAsync()
         {
-            return await _dbSet.Where(p => p.EstadoRegistro == EstadoRegistroProfesor.PENDIENTE).ToListAsync();
+            return await _dbSet.Include(p => p.Usuario)
+                .Where(p => p.EstadoRegistro == EstadoRegistroProfesor.PENDIENTE)
+                .ToListAsync();
         }
         public async Task<Profesor?> GetProfesorConMateriasAsync(int idProfesor)
         {

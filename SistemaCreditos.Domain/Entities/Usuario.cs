@@ -28,6 +28,33 @@
             return string.Join(" ", new[] { PrimerNombre, SegundoNombre, PrimerApellido, SegundoApellido }
                 .Where(s => !string.IsNullOrWhiteSpace(s)));
         }
+        public void ActualizarDatosBasicos(string primerNombre, string? segundoNombre, string primerApellido, string? segundoApellido)
+        {
+            PrimerNombre = primerNombre;
+            SegundoNombre = segundoNombre;
+            PrimerApellido = primerApellido;
+            SegundoApellido = segundoApellido;
+            FechaActualizacion = DateTime.UtcNow; 
+        }
+
+        public void ActualizarDatosPorAdmin(
+            string tipoDocumento,
+            string numeroDocumento,
+            string email,
+            string primerNombre,
+            string? segundoNombre,
+            string primerApellido,
+            string? segundoApellido)
+        {
+            TipoDocumento = tipoDocumento;
+            NumeroDocumento = numeroDocumento;
+            Email = email;
+            PrimerNombre = primerNombre;
+            SegundoNombre = segundoNombre;
+            PrimerApellido = primerApellido;
+            SegundoApellido = segundoApellido;
+            FechaActualizacion = DateTime.UtcNow; 
+        }
         public void DesactivarCuenta()
         {
             Estado = false;
@@ -44,5 +71,6 @@
             FechaDesvinculacion = DateTime.UtcNow;
             FechaActualizacion = DateTime.UtcNow;
         }
+
     }
 }

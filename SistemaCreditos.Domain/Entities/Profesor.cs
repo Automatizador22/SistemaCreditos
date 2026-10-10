@@ -17,15 +17,25 @@ namespace SistemaCreditos.Domain.Entities
 
         public void AprobarSolicitud()
         {
+            ValidarEstadoPendiente();
             EstadoRegistro = EstadoRegistroProfesor.APROBADO;
             FechaActualizacion = DateTime.UtcNow;
         }
+
         public void RechazarSolicitud()
         {
+            ValidarEstadoPendiente();
             EstadoRegistro = EstadoRegistroProfesor.RECHAZADO;
             FechaActualizacion = DateTime.UtcNow;
         }
 
+        private void ValidarEstadoPendiente()
+        {
+            if (EstadoRegistro != EstadoRegistroProfesor.PENDIENTE)
+            {
+                throw new InvalidOperationException($"No se puede procesar la solicitud porque el profesor ya se encuentra en estado: {EstadoRegistro}");
+            }
+        }
         public void Repostular()
         {
             if (EstadoRegistro != EstadoRegistroProfesor.RECHAZADO)

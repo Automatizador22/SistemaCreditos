@@ -19,8 +19,4 @@
     <ProjectReference Include="..\SistemaCreditos.Domain\SistemaCreditos.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="UseCases\Profesores\" />
-  </ItemGroup>
-
 </Project>
