@@ -10,7 +10,6 @@ namespace SistemaCreditos.Infrastructure.Persistence.Repositories
         public EstudianteRepository(AppDbContext context) : base(context)
         {
         }
-
         public async Task<Estudiante?> GetByIdUsuarioAsync(int idUsuario)
         {
             return await _dbSet.FirstOrDefaultAsync(e => e.IdUsuario == idUsuario);
@@ -19,6 +18,12 @@ namespace SistemaCreditos.Infrastructure.Persistence.Repositories
         {
             return await _dbSet.Include(e => e.Inscripciones)
                                .FirstOrDefaultAsync(e => e.IdEstudiante == idEstudiante);
+        }
+        public async Task<IReadOnlyList<Estudiante>> ObtenerEstudiantesDetalladosAsync()
+        {
+            return await _dbSet
+                .Include(e => e.Usuario)
+                .ToListAsync();
         }
     }
 }

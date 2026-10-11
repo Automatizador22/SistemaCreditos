@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using SistemaCreditos.Application.DTOs.Profesores;
 using SistemaCreditos.Application.DTOs.Usuarios;
+using SistemaCreditos.Application.UseCases.Estudiantes;
 using SistemaCreditos.Application.UseCases.Profesores;
 using SistemaCreditos.Application.UseCases.Usuarios;
 
@@ -15,15 +16,18 @@ namespace SistemaCreditos.Api.Controllers
         private readonly ObtenerSolicitudesPendientesUC _obtenerSolicitudesPendientesUC;
         private readonly ProcesarSolicitudProfesorUC _procesarSolicitudProcesorUC;
         private readonly ActualizarUsuarioAdminUC _actualizarUsuarioAdminUC;
+        private readonly ObtenerTodosLosEstudiantesUC _obtenerTodosLosEstudiantesUC;
 
         public AdminController(
             ObtenerSolicitudesPendientesUC obtenerSolicitudesPendientesUC,
             ProcesarSolicitudProfesorUC procesarSolicitudProfesorUC,
-            ActualizarUsuarioAdminUC actualizarUsuarioAdminUC)
+            ActualizarUsuarioAdminUC actualizarUsuarioAdminUC,
+            ObtenerTodosLosEstudiantesUC obtenerTodosLosEstudiantesUC)
         {
             _obtenerSolicitudesPendientesUC = obtenerSolicitudesPendientesUC;
             _procesarSolicitudProcesorUC = procesarSolicitudProfesorUC;
             _actualizarUsuarioAdminUC = actualizarUsuarioAdminUC;
+            _obtenerTodosLosEstudiantesUC = obtenerTodosLosEstudiantesUC;
         }
 
         [HttpGet("SolicitudesPendientes")]
@@ -47,6 +51,12 @@ namespace SistemaCreditos.Api.Controllers
         {
             await _actualizarUsuarioAdminUC.EjecutarAsync(idUsuario, dto);
             return Ok(new { mensaje = "El perfil del usuario ha sido actualizado exitosamente por el administrador." });
+        }
+        [HttpGet("ObtenerTodosLosEstudiantes")]
+        public async Task<IActionResult> obtenerTodosLosEstudiantesUC()
+        {
+            var resultado = await _obtenerTodosLosEstudiantesUC.EjecutarAsync();
+            return Ok(resultado);
         }
     }
 }

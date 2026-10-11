@@ -76,6 +76,7 @@ builder.Services.AddScoped<IEmailService, EmailService>();
 builder.Services.AddScoped<RepostularProfesorUC>();
 builder.Services.AddScoped<ActualizarDatosUsuarioUC>();
 builder.Services.AddScoped<ActualizarUsuarioAdminUC>();
+builder.Services.AddScoped<ObtenerTodosLosEstudiantesUC>();
 
 var secretKey = builder.Configuration["JwtSettings:SecretKey"];
 

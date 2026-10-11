@@ -6,5 +6,6 @@ namespace SistemaCreditos.Application.Interfaces.Persistence
     {
         Task<Estudiante?> GetByIdUsuarioAsync(int idUsuario);
         Task<Estudiante?> GetEstudianteConInscripcionesAsync(int idEstudiante);
+        Task<IReadOnlyList<Estudiante>> ObtenerEstudiantesDetalladosAsync();
     }
 }
