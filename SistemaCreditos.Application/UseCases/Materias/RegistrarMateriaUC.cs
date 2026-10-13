@@ -2,6 +2,7 @@
 using SistemaCreditos.Application.Exceptions;
 using SistemaCreditos.Application.Interfaces.Persistence;
 using SistemaCreditos.Domain.Entities;
+using SistemaCreditos.Domain.Enums;
 
 namespace SistemaCreditos.Application.UseCases.Materias
 {
@@ -32,8 +33,12 @@ namespace SistemaCreditos.Application.UseCases.Materias
                 nombreProfesor = usuarioProfesor != null
                     ? usuarioProfesor.ObtenerNombreCompleto()
                     : "Profesor Sin Nombre";
-            }
 
+                if (profesor.EstadoRegistro != EstadoRegistroProfesor.PENDIENTE)
+                {
+                    throw new ValidationException($"No se puede asignar este profesor a la materia. Su estado actual es: { profesor.EstadoRegistro }");
+                }
+            }
             var nuevaMateria = new Materia
             {
                 CodMateria = Guid.NewGuid(),
