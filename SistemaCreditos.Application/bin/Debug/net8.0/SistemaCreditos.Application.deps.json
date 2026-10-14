@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "SistemaCreditos.Application/1.0.0": {
+        "dependencies": {
+          "SistemaCreditos.Domain": "1.0.0"
+        },
+        "runtime": {
+          "SistemaCreditos.Application.dll": {}
+        }
+      },
+      "SistemaCreditos.Domain/1.0.0": {
+        "runtime": {
+          "SistemaCreditos.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SistemaCreditos.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SistemaCreditos.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

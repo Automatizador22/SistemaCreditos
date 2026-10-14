@@ -1,0 +1,96 @@
+[
+  {
+    "ContainingType": "SistemaCreditos.API.Controllers.AuthController",
+    "Method": "Login",
+    "RelativePath": "api/auth/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "SistemaCreditos.Application.DTOs.Auth.LoginRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaCreditos.API.Controllers.AuthController",
+    "Method": "PerfilSeguro",
+    "RelativePath": "api/auth/perfil-seguro",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaCreditos.API.Controllers.AuthController",
+    "Method": "Registrar",
+    "RelativePath": "api/auth/registro",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "SistemaCreditos.Application.DTOs.Usuarios.RegistrarUsuarioRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaCreditos.Api.Controllers.EstudianteController",
+    "Method": "InscribirMateria",
+    "RelativePath": "api/estudiante/inscribir-materia",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "SistemaCreditos.Application.DTOs.Inscripciones.InscribirMateriaRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaCreditos.Api.Controllers.EstudianteController",
+    "Method": "VerCompa\u00F1erosClase",
+    "RelativePath": "api/estudiante/ver-companeros-clase",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaCreditos.Api.Controllers.MateriaController",
+    "Method": "ObtenerMateriasDisponibles",
+    "RelativePath": "api/materia/ObtenerMateriasDisponibles",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaCreditos.Api.Controllers.MateriaController",
+    "Method": "RegistrarMateria",
+    "RelativePath": "api/materia/RegistrarMateria",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "SistemaCreditos.Application.DTOs.Materias.RegistrarMateriaRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

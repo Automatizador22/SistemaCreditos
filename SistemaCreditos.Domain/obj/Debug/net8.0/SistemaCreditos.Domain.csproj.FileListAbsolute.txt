@@ -1,0 +1,12 @@
+C:\Users\joansdurangos\Documents\SEBAS\PruebaTecnica\SistemaCreditos\SistemaCreditos.Domain\bin\Debug\net8.0\SistemaCreditos.Domain.deps.json
+C:\Users\joansdurangos\Documents\SEBAS\PruebaTecnica\SistemaCreditos\SistemaCreditos.Domain\bin\Debug\net8.0\SistemaCreditos.Domain.dll
+C:\Users\joansdurangos\Documents\SEBAS\PruebaTecnica\SistemaCreditos\SistemaCreditos.Domain\bin\Debug\net8.0\SistemaCreditos.Domain.pdb
+C:\Users\joansdurangos\Documents\SEBAS\PruebaTecnica\SistemaCreditos\SistemaCreditos.Domain\obj\Debug\net8.0\SistemaCreditos.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\joansdurangos\Documents\SEBAS\PruebaTecnica\SistemaCreditos\SistemaCreditos.Domain\obj\Debug\net8.0\SistemaCreditos.Domain.AssemblyInfoInputs.cache
+C:\Users\joansdurangos\Documents\SEBAS\PruebaTecnica\SistemaCreditos\SistemaCreditos.Domain\obj\Debug\net8.0\SistemaCreditos.Domain.AssemblyInfo.cs
+C:\Users\joansdurangos\Documents\SEBAS\PruebaTecnica\SistemaCreditos\SistemaCreditos.Domain\obj\Debug\net8.0\SistemaCreditos.Domain.csproj.CoreCompileInputs.cache
+C:\Users\joansdurangos\Documents\SEBAS\PruebaTecnica\SistemaCreditos\SistemaCreditos.Domain\obj\Debug\net8.0\SistemaCreditos.Domain.sourcelink.json
+C:\Users\joansdurangos\Documents\SEBAS\PruebaTecnica\SistemaCreditos\SistemaCreditos.Domain\obj\Debug\net8.0\SistemaCreditos.Domain.dll
+C:\Users\joansdurangos\Documents\SEBAS\PruebaTecnica\SistemaCreditos\SistemaCreditos.Domain\obj\Debug\net8.0\refint\SistemaCreditos.Domain.dll
+C:\Users\joansdurangos\Documents\SEBAS\PruebaTecnica\SistemaCreditos\SistemaCreditos.Domain\obj\Debug\net8.0\SistemaCreditos.Domain.pdb
+C:\Users\joansdurangos\Documents\SEBAS\PruebaTecnica\SistemaCreditos\SistemaCreditos.Domain\obj\Debug\net8.0\ref\SistemaCreditos.Domain.dll

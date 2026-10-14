@@ -1,0 +1,16 @@
+C:\Users\joansdurangos\Documents\SEBAS\PruebaTecnica\SistemaCreditos\SistemaCreditos.Application\bin\Debug\net8.0\SistemaCreditos.Application.deps.json
+C:\Users\joansdurangos\Documents\SEBAS\PruebaTecnica\SistemaCreditos\SistemaCreditos.Application\bin\Debug\net8.0\SistemaCreditos.Application.dll
+C:\Users\joansdurangos\Documents\SEBAS\PruebaTecnica\SistemaCreditos\SistemaCreditos.Application\bin\Debug\net8.0\SistemaCreditos.Application.pdb
+C:\Users\joansdurangos\Documents\SEBAS\PruebaTecnica\SistemaCreditos\SistemaCreditos.Application\bin\Debug\net8.0\SistemaCreditos.Domain.dll
+C:\Users\joansdurangos\Documents\SEBAS\PruebaTecnica\SistemaCreditos\SistemaCreditos.Application\bin\Debug\net8.0\SistemaCreditos.Domain.pdb
+C:\Users\joansdurangos\Documents\SEBAS\PruebaTecnica\SistemaCreditos\SistemaCreditos.Application\obj\Debug\net8.0\SistemaCreditos.Application.csproj.AssemblyReference.cache
+C:\Users\joansdurangos\Documents\SEBAS\PruebaTecnica\SistemaCreditos\SistemaCreditos.Application\obj\Debug\net8.0\SistemaCreditos.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\joansdurangos\Documents\SEBAS\PruebaTecnica\SistemaCreditos\SistemaCreditos.Application\obj\Debug\net8.0\SistemaCreditos.Application.AssemblyInfoInputs.cache
+C:\Users\joansdurangos\Documents\SEBAS\PruebaTecnica\SistemaCreditos\SistemaCreditos.Application\obj\Debug\net8.0\SistemaCreditos.Application.AssemblyInfo.cs
+C:\Users\joansdurangos\Documents\SEBAS\PruebaTecnica\SistemaCreditos\SistemaCreditos.Application\obj\Debug\net8.0\SistemaCreditos.Application.csproj.CoreCompileInputs.cache
+C:\Users\joansdurangos\Documents\SEBAS\PruebaTecnica\SistemaCreditos\SistemaCreditos.Application\obj\Debug\net8.0\SistemaCreditos.Application.sourcelink.json
+C:\Users\joansdurangos\Documents\SEBAS\PruebaTecnica\SistemaCreditos\SistemaCreditos.Application\obj\Debug\net8.0\SistemaC.F7A5DCD1.Up2Date
+C:\Users\joansdurangos\Documents\SEBAS\PruebaTecnica\SistemaCreditos\SistemaCreditos.Application\obj\Debug\net8.0\SistemaCreditos.Application.dll
+C:\Users\joansdurangos\Documents\SEBAS\PruebaTecnica\SistemaCreditos\SistemaCreditos.Application\obj\Debug\net8.0\refint\SistemaCreditos.Application.dll
+C:\Users\joansdurangos\Documents\SEBAS\PruebaTecnica\SistemaCreditos\SistemaCreditos.Application\obj\Debug\net8.0\SistemaCreditos.Application.pdb
+C:\Users\joansdurangos\Documents\SEBAS\PruebaTecnica\SistemaCreditos\SistemaCreditos.Application\obj\Debug\net8.0\ref\SistemaCreditos.Application.dll
