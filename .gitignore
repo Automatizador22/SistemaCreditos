@@ -3,3 +3,50 @@
 ################################################################################
 
 /.vs/SistemaCreditos
+## Visual Studio & .NET / Directorios de compilación
+bin/
+obj/
+out/
+[Bb]uild/
+[Bb]inaries/
+[Oo]utput/
+.vs/
+
+## Archivos de usuario e ide
+*.user
+*.userosscache
+*.sln.docstates
+*.suo
+*.userprefs
+*.cache
+*.ncb
+*.aps
+*.opendb
+*.dbmdl
+*.publish.xml
+
+## Resultados de pruebas
+[Tt]est[Rr]esult*/
+*.trx
+*.coverage
+*.coveragexml
+
+## Archivos de depuración y logs
+*.log
+*.pid
+
+## Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+## Herramientas de análisis (ReSharper, Sonar, etc.)
+_ReSharper*/
+*.resharper
+.sonarqube/
+
+## Archivos sensibles y variables de entorno
+docker-compose.override.yml
+.env
+appsettings*.Development.json
+
