@@ -34,7 +34,7 @@ namespace SistemaCreditos.Application.UseCases.Materias
                     ? usuarioProfesor.ObtenerNombreCompleto()
                     : "Profesor Sin Nombre";
 
-                if (profesor.EstadoRegistro != EstadoRegistroProfesor.PENDIENTE)
+                if (profesor.EstadoRegistro != EstadoRegistroProfesor.APROBADO)
                 {
                     throw new ValidationException($"No se puede asignar este profesor a la materia. Su estado actual es: { profesor.EstadoRegistro }");
                 }
