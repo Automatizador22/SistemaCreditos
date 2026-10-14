@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using SistemaCreditos.Application.Interfaces.ExternalServices;
@@ -14,6 +15,8 @@ using SistemaCreditos.Infrastructure.Persistence.Context;
 using SistemaCreditos.Infrastructure.Persistence.Repositories;
 using SistemaCreditos.Infrastructure.Security;
 using System.Text;
+using System.Text.Json;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -78,6 +81,16 @@ builder.Services.AddScoped<ActualizarDatosUsuarioUC>();
 builder.Services.AddScoped<ActualizarUsuarioAdminUC>();
 builder.Services.AddScoped<ObtenerTodosLosEstudiantesUC>();
 
+// Configuracion del HealtCheck
+
+builder.Services.AddHealthChecks()
+    .AddCheck("Self", () => HealthCheckResult.Healthy("La API está viva y respondiendo."))
+    .AddDbContextCheck<AppDbContext>(
+        name: "Database",
+        failureStatus: HealthStatus.Unhealthy,
+        tags: new[] { "db", "mysql" }
+    );
+
 var secretKey = builder.Configuration["JwtSettings:SecretKey"];
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -110,5 +123,4 @@ app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
-
 app.Run();
